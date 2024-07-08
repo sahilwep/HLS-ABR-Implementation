@@ -1,0 +1,36 @@
+
+# commands inside dev-env...
+
+docker build -t video_trans .
+
+docker images
+
+docker run -it -v /Users/sahilwep/Developer/Development/Github_Space/HLS-ABR-Implementation/videos:/home/app/vidoes 7c1e0ec2a7b6
+
+
+
+# Commands inside the docker...
+
+ffmpeg -i input.mp4  -codec:v libx264 -codec:a aac -hls_time 10 -hls_playlist_type vod -hls_segment_filename "${outputPath}/segment%03d.ts" -start_number 0 ${hlsPath}
+
+ffmpeg -i input.mp4  -codec:v libx264 -codec:a aac -hls_time 10 -hls_playlist_type vod -hls_segment_filename "$outputs/segment%03d.ts" -start_number 0 outputs/index.m3u8
+
+ffmpeg -i video.mov  -codec:v libx264 -codec:a aac -hls_time 10 -hls_playlist_type vod -hls_segment_filename outputs/segment%03d.ts -start_number 0 outputs/index.m3u8
+
+once the segments are created, we can't open it, because this is binary files, not typescript files..
+
+create another video sample...
+
+ffmpeg -i sample.mov  -codec:v libx264 -codec:a aac -hls_time 10 -hls_playlist_type vod -hls_segment_filename outputs_2/segment%03d.ts -start_number 0 outputs_2/index.m3u8
+
+
+# now once the segments are created, we can upload in s3..
+# once it's done...
+# we can visit videojs.com (open-source tool that support hls)
+https://videojs.com/getting-started
+
+# we need to play this video...
+# resource...
+https://videojs.github.io/videojs-contrib-hls/
+
+
