@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  background-color: #9adef0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #067d9e;
+  color: #092b35;
+  padding: 20px;
+  text-align: center;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.video-js .vjs-control-bar {
+  font-size: 1.5em;
+}
+
+.video-js .vjs-big-play-button {
+  font-size: 3em;
+}
+
+.video-js .vjs-control {
+  background-color: rgba(0, 0, 0, 0.7);
+}
